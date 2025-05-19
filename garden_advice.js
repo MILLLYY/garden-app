@@ -1,7 +1,8 @@
 /**
  * this returns gardening advice based on the season.
  * @param {string} season - the current season.
- * @returns {string} this is the advice message.
+ * @returns {string} this is the advice message appropriate for the season.
+ 
  */
 function getSeasonAdvice(season) {
   if (season === "summer") {
@@ -15,7 +16,8 @@ function getSeasonAdvice(season) {
 /**
  * this returns gardening advice based on the plant type.
  * @param {string} plantType - the type of the plant.
- * @returns {string} this is the advice message.
+ * @returns {string} this is the advice message appropriate for the plant type.
+ 
  */
 function getPlantAdvice(plantType) {
   if (plantType === "flower") {
@@ -26,12 +28,13 @@ function getPlantAdvice(plantType) {
   return "No advice for this type of plant.";
 }
 
+// this combines the season-based advice and the plant based advice into one message.
+const advice = getSeasonAdvice(season) + getPlantAdvice(plantType);
+
+// this logs the generated advice to the console for the user.
 // these are hardcoded inputs for demonstration purposes (to be replaced with prompt() later)
 const season = "summer";
 const plantType = "flower";
 
-// this combines the advice from both functions
-const advice = getSeasonAdvice(season) + getPlantAdvice(plantType);
-
-// this logs the generated advice to the console
+// this logs the generated advice to the console for the user.
 console.log(advice);
